@@ -36,7 +36,7 @@ const getPokemonsInList = async (pokemons) => {
 const getPokeCard = (pokemon) => {
     const name = pokemon.name
     const id = pokemon.id
-    let pic = (pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg';
+    const pic = (pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg';
 
     return `
         <div class="col-md-4 mt-5">
