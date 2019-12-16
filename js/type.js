@@ -15,10 +15,11 @@ const getListByType = async (page, param) => {
 const getPokemonsInTypeList = async (pokemons) => {
     // AJAX
     const list = []
+    let api_call = data = ``
 
     for(pokemon of pokemons) {
-        const api_call = await fetch(pokemon.pokemon.url)
-        const data = await api_call.json()
+        api_call = await fetch(pokemon.pokemon.url)
+        data = await api_call.json()
         list.push(data)
     }
 

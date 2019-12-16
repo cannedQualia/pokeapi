@@ -23,10 +23,11 @@ const getList = async (limit, page, param) => {
 const getPokemonsInList = async (pokemons) => {
     // AJAX
     const list = []
+    let api_call = data = ``
 
     for(pokemon of pokemons) {
-        const api_call = await fetch(pokemon.url)
-        const data = await api_call.json()
+        api_call = await fetch(pokemon.url)
+        data = await api_call.json()
         list.push(data)
     }
 
@@ -79,16 +80,16 @@ const loadMain = async () => {
     try{
         switch (page) {
             case "bio":
-                $.getScript("js/bio.js", () => { loadBio(pokeId) })
+                $.getScript("js/bio.js", () => loadBio(pokeId))
                 break
             case "type":
-                $.getScript("js/type.js", () => { loadType(page, typeName) })
+                $.getScript("js/type.js", () => loadType(page, typeName))
                 break
             default:
                 loadMain()
         }
     } catch (err){
-        document.getElementById('main').innerHTML = `Error al conectarse con el API`
+        document.getElementById('main').innerHTML = `Error de ejecución`
         throw `Error: ${err}`
     }
  })()
