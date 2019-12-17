@@ -2,12 +2,12 @@
 // MAIN PAGE
 // ==========================
 const uppFirst = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 const handleError = (res) => {
     document.getElementById('main').innerHTML = `<h2 class="text-danger">Error en el servidor. Verifique conexión y datos.</h2>`
-    throw new Error(`Error: ${res}`);
+    throw new Error(`Error: ${res}`)
 }
 
 const getList = async (limit, page, param) => {
@@ -37,7 +37,7 @@ const getPokemonsInList = async (pokemons) => {
 const getPokeCard = (pokemon) => {
     const name = pokemon.name
     const id = pokemon.id
-    const pic = (pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg';
+    const pic = (pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg'
 
     return `
         <div class="col-md-4 mt-5">

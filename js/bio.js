@@ -8,7 +8,7 @@ const getPokemonById = async (id) => {
     const api_call = await fetch(`${url}${id}`)
         .then( (res) => {
             if (res.status >= 400 && res.status < 600) handleError(res)
-            return res;
+            return res
         })
     const pokemon = await api_call.json()
 
@@ -16,7 +16,7 @@ const getPokemonById = async (id) => {
 }
 
 const getBioCard = (pokemon) => {
-    const pic = (pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg';
+    const pic = (pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg'
     const pokeTypes = pokemon.types
     const pokeAbilities = pokemon.abilities
     const pokeMoves = pokemon.moves

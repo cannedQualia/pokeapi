@@ -4,7 +4,7 @@ const getListByType = async (page, param) => {
     const api_call = await fetch(url)
         .then( (res) => {
             if (res.status >= 400 && res.status < 600) handleError(res)
-            return res;
+            return res
         })
     const data = await api_call.json()
     const list = data.pokemon
