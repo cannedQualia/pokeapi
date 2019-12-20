@@ -1,9 +1,7 @@
 // ==========================
 // MAIN PAGE
 // ==========================
-const uppFirst = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-}
+const uppFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1)
 
 const handleError = (res) => {
     document.getElementById('main').innerHTML = `<h2 class="text-danger">Error en el servidor. Verifique conexión y datos.</h2>`
